@@ -6,10 +6,6 @@
 package org.example;
 import java.util.Scanner;
 
-/**
- * TODO: FIX USER INPUT IF NOT NUMERICAL
- *
- */
 public class App
 {
     public static void main( String[] args )
@@ -20,9 +16,11 @@ public class App
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter your height (in inches): ");
+        while (!scanner.hasNextDouble()) scanner.next();
         height = scanner.nextDouble();
 
         System.out.println("Enter your weight (in pounds): ");
+        while (!scanner.hasNextDouble()) scanner.next();
         weight = scanner.nextDouble();
 
         scanner.close();
